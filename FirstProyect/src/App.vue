@@ -27,10 +27,10 @@ const arrayFrutas = [
     },
 ];
 const fruta = {
-        name: "Manzana",
-        price: "$1.00",
-        description: "Una manzana",
-        stock: 0,
+  name: "Manzana",
+  price: "$1.00",
+  description: "Una manzana",
+  stock: 0,
 }
 
 //Methods
