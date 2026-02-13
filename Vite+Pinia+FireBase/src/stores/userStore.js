@@ -1,5 +1,5 @@
 import {defineStore} from  'pinia'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,getAuth,updateProfile,updateEmail } from 'firebase/auth'
 import {auth} from '../firebaseConfig.js'
 import router from '../router.js'
 import {useDatabaseStore} from '../stores/database.js'
@@ -60,7 +60,7 @@ export const useUserStore = defineStore('userStore',{
                unsuscribe();
             },(e) => rej(e))
          })
-      }
+      },
    }
 })
 

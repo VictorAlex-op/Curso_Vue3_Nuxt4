@@ -1,23 +1,23 @@
 <script setup>
-import {useUserStore} from './stores/userStore'
-const userStore = useUserStore()
+import NavBar from './components/NavBar.vue'
+import { useUserStore } from './stores/userStore'; 
+const user = useUserStore()
 
 </script>
 
 <template>
 
   <!-- navegacion -->
-  <div>
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/register">Register</router-link>
-      <button @click="userStore.Logout">logout</button>
-    </nav>
+  <div v-if="user.userData !== null">
+    <NavBar></NavBar>
   </div>
 
   <!-- redireccion por router -->
-  <router-view></router-view>
+  <a-layout-content style="padding: 0 50px">
+    <div :style="{background: '#fff',padding:'24px',minHeight:'280px'}">
+      <router-view></router-view>
+    </div>
+  </a-layout-content>
 
 </template>
 
